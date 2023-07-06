@@ -7,6 +7,8 @@ from os import environ
 
 load_dotenv()
 
+url = str(environ.get("REQ_URL"))
+
 database = str(environ.get("DB_DATABASE"))
 user = str(environ.get("DB_USER")) 
 password = str(environ.get("DB_PASSWORD"))
@@ -19,7 +21,7 @@ db_config = {
     'database': database
 }
 
-url = 'https://dry-field-444.fly.dev/api/user/get-all'
+
 
 conn = mysql.connector.connect(**db_config)
 cursor = conn.cursor()
